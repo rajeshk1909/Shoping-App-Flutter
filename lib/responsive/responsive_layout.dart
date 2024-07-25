@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
 import 'package:shoping_app/utils/global_variables.dart';
 
 class ResponsiveLayout extends StatefulWidget {
