@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">620980868197</string>
+    <string name="google_api_key" translatable="false">AIzaSyAVD4duR-8Sw4EW31K2wehyqcMjYzMiWKU</string>
+    <string name="google_app_id" translatable="false">1:620980868197:android:c1524b9dafca7bf987628c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAVD4duR-8Sw4EW31K2wehyqcMjYzMiWKU</string>
+    <string name="google_storage_bucket" translatable="false">inastagaramapp.appspot.com</string>
+    <string name="project_id" translatable="false">inastagaramapp</string>
+</resources>

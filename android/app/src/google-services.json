@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620980868197",
+    "project_id": "inastagaramapp",
+    "storage_bucket": "inastagaramapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620980868197:android:c1524b9dafca7bf987628c",
+        "android_client_info": {
+          "package_name": "com.example.shoping_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVD4duR-8Sw4EW31K2wehyqcMjYzMiWKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

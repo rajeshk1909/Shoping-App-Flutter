@@ -1,79 +1,40 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shoping_app/responsive/mobile_screen_layout.dart';
+import 'package:shoping_app/responsive/responsive_layout.dart';
+import 'package:shoping_app/responsive/web_screen_layout.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MyApp(),
-  ));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        options: const FirebaseOptions(
+            apiKey: 'AIzaSyCm0pV9fWkr201J9bULFACqwvtxNslE69A',
+            appId: "1:620980868197:web:3aa5ba57e8648a0b87628c",
+            storageBucket: "inastagaramapp.appspot.com",
+            messagingSenderId: "620980868197",
+            projectId: "inastagaramapp"));
+  } else {
+    await Firebase.initializeApp();
+  }
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Check'),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          color: Colors.white,
-          onPressed: () {
-            const Text('Icon Button Clicked');
-          },
-        ),
-        backgroundColor: Colors.blue,
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            color: Colors.white,
-            onPressed: () {
-              const Text('Icon Button Clicked');
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.more),
-            color: Colors.white,
-            onPressed: () {
-              const Text('Icon Button Clicked');
-            },
-          ),
-        ],
-        flexibleSpace: const SafeArea(
-          child: Icon(
-            Icons.camera,
-            color: Colors.white,
-            size: 55.0,
-          ),
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Check',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      drawer: const Drawer(
-        elevation: 16.0,
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: Text('Raju'),
-              accountEmail: Text('Raju@gmail.com'),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-              ),
-              otherAccountsPictures: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                )
-              ],
-            ),
-            ListTile(title: Text('All Inbox'), leading: Icon(Icons.mail))
-          ],
-        ),
+      home: const ResponsiveLayout(
+        mobileScreenLayout: MobileScreenLayout(),
+        webScreenLayout: WebScreenLayout(),
       ),
     );
   }
